@@ -1,0 +1,234 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+.top {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 2rem;
+    height: 20.085rem; /* 29.8vh = 20.085rem */
+    width: 100%;
+    background-color: #31363f;
+    align-items: center;
+}
+
+.galery {
+    display: flex;
+    justify-content: center;
+    color: #f1f1f1;
+    background-color: #31363f;
+}
+
+.top > :not(:nth-child(3)) {
+    color: #fefefe;
+    padding: 3.375rem; /* 5vh = 3.375rem */
+    transition: color 0.5s ease;
+}
+
+.top > :not(:nth-child(3)):hover {
+    color: orange;
+}
+
+.top > :nth-child(3) {
+    color: orange;
+    padding-bottom: 16.875rem; /* 25vh = 16.875rem */
+    padding-left: 3.375rem; /* 5vh = 3.375rem */
+    padding-right: 3.375rem; /* 5vh = 3.375rem */
+    transition: color 0.5s ease;
+}
+
+.top > :nth-child(3):hover {
+    color: white;
+}
+
+a {
+    color: #fefefe;
+    text-decoration: none;
+}
+
+.line {
+    height: 0.0675rem; /* 0.1vh = 0.0675rem */
+    background-color: white;
+}
+
+.Bline {
+    height: 0.0675rem; /* 0.1vh = 0.0675rem */
+    background-color: black;
+}
+
+.middle {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 70rem; /* 130vh = 87.675rem */
+    gap: 3.375rem; /* 5vh = 3.375rem */
+    background-color: #222831;
+    color: #fefefe;
+}
+
+.middle img {
+    height: 12rem; /* 30vh = 20.25rem */
+}
+
+.middle img:hover {
+    transform: scale(1.5);
+    margin-bottom: 2.025rem; /* 3vh = 2.025rem */
+}
+
+.middle img:hover > .description1 {
+    visibility: visible;
+}
+
+.description1, .description2, .description3{
+    visibility: hidden;
+}
+
+
+.circle {
+    height: 20.25rem; /* 30vh = 20.25rem */
+    width: 27rem; /* 40vh = 27rem */
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+.left {
+    padding-top: 3.375rem; /* 5vh = 3.375rem */
+    padding-left: 3.375rem; /* 5vh = 3.375rem */
+}
+
+.right {
+    color: #fefefe;
+    padding: 3.375rem; /* 5vh = 3.375rem */
+}
+
+
+.project-top, .project-bot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#main {
+    position: relative;
+    animation: HomeUpandShake 2s ease;
+}
+
+#anim {
+    position: relative;
+    animation: Up 2s ease;
+}
+
+@keyframes Up {
+    0% {
+        top: 9.45rem; /* 14vh = 9.45rem */
+    }
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes HomeUpandShake {
+    0% {
+        top: 10.125rem; /* 15vh = 10.125rem */
+    }
+    50% {
+        top: 0;
+    }
+    55% {
+        transform: rotate(0deg);
+    }
+    60% {
+        transform: rotate(5deg);
+    }
+    65% {
+        transform: rotate(-5deg);
+    }
+    70% {
+        transform: rotate(5deg);
+    }
+    75% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes UpForPhone {
+    0% {
+        top: 4rem;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes HomeUpandShakeForPhone {
+    0% {
+        top: 4rem;
+    }
+    75% {
+        top: 0
+    }
+    80% {
+        transform: rotate(0deg);
+    }
+    85% {
+        transform: rotate(10deg);
+    }
+    90% {
+        transform: rotate(-10deg);
+    }
+    95% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .top {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .top > :not(:nth-child(3)) {
+        padding: 2.025rem; /* 3.375rem = 2.025rem */
+    }
+
+    .top > :nth-child(3) {
+        padding: 0;
+    }
+
+    .galery {
+        flex-wrap: wrap;
+    }
+
+    .circle {
+        height: 13.5875rem; /* 20.25rem = 13.5875rem */
+        width: 20.25rem; /* 30vh = 20.25rem */
+    }
+
+    .left {
+        padding: 2.025rem; /* 3.375rem = 2.025rem */
+    }
+
+    .right {
+        padding: 2.025rem; /* 3.375rem = 2.025rem */
+    }
+
+    .middle img:hover {
+        transform: scale(1);
+        margin-bottom: 0;
+    }
+
+    #anim {
+        position: relative;
+        animation: UpForPhone 2s ease;
+    }
+
+    #main {
+        position: relative;
+        animation: HomeUpandShakeForPhone 2s ease;
+    }
+}
